@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bookstore</groupId>
+    <artifactId>bookstore-platform</artifactId>
+    <version>1.0.0</version>
+
+    <!-- IMPORTANT CHANGE -->
+    <packaging>pom</packaging>
+
+    <name>bookstore-platform</name>
+    <description>Parent project for Bookstore Microservices Platform</description>
+
+    <!-- Spring Boot Parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
+
+    <!-- Java Version -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <!-- Modules (microservices) -->
+    <modules>
+
+        <module>config-server</module>
+        <module>eureka-server</module>
+        <module>api-gateway</module>
+
+        <module>services/user-service</module>
+        <module>services/admin-service</module>
+        <module>services/product-service</module>
+        <module>services/cart-service</module>
+        <module>services/wishlist-service</module>
+        <module>services/customer-service</module>
+        <module>services/order-service</module>
+        <module>services/feedback-service</module>
+        <module>services/notification-service</module>
+
+        <module>common-lib</module>
+
+    </modules>
+
+</project>
