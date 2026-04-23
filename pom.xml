@@ -5,12 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Project coordinates -->
+    <!-- Project Info -->
     <groupId>com.bookstore</groupId>
     <artifactId>bookstore-platform</artifactId>
     <version>1.0.0</version>
-
-    <!-- IMPORTANT: parent aggregator project -->
     <packaging>pom</packaging>
 
     <name>bookstore-platform</name>
@@ -24,32 +22,31 @@
         <relativePath/>
     </parent>
 
-    <!-- Java version -->
+    <!-- Properties -->
     <properties>
         <java.version>17</java.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
     </properties>
 
-    <!-- MODULES -->
+    <!-- Spring Cloud Dependency Management -->
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Active Modules (only created modules listed here) -->
     <modules>
 
-        <!-- Infrastructure services -->
-        <module>config-server</module>
         <module>eureka-server</module>
-        <module>api-gateway</module>
-
-        <!-- Business microservices -->
-        <module>services/user-service</module>
-        <module>services/admin-service</module>
-        <module>services/product-service</module>
-        <module>services/cart-service</module>
-        <module>services/wishlist-service</module>
-        <module>services/customer-service</module>
-        <module>services/order-service</module>
-        <module>services/feedback-service</module>
-        <module>services/notification-service</module>
-
-        <!-- Shared module -->
-        <module>common-lib</module>
 
     </modules>
 
