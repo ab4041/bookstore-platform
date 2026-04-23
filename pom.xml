@@ -1,15 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project coordinates -->
     <groupId>com.bookstore</groupId>
     <artifactId>bookstore-platform</artifactId>
     <version>1.0.0</version>
 
-    <!-- IMPORTANT CHANGE -->
+    <!-- IMPORTANT: parent aggregator project -->
     <packaging>pom</packaging>
 
     <name>bookstore-platform</name>
@@ -23,18 +24,20 @@
         <relativePath/>
     </parent>
 
-    <!-- Java Version -->
+    <!-- Java version -->
     <properties>
         <java.version>17</java.version>
     </properties>
 
-    <!-- Modules (microservices) -->
+    <!-- MODULES -->
     <modules>
 
+        <!-- Infrastructure services -->
         <module>config-server</module>
         <module>eureka-server</module>
         <module>api-gateway</module>
 
+        <!-- Business microservices -->
         <module>services/user-service</module>
         <module>services/admin-service</module>
         <module>services/product-service</module>
@@ -45,6 +48,7 @@
         <module>services/feedback-service</module>
         <module>services/notification-service</module>
 
+        <!-- Shared module -->
         <module>common-lib</module>
 
     </modules>
